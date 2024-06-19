@@ -21,5 +21,5 @@
 * kind: https://kind.sigs.k8s.io/docs/user/quick-start/#installing-from-release-binaries
 
 ### SO
-* 192.168.1.14
+* ssh dev@192.168.1.14
 * dev/root
