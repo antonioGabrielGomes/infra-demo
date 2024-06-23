@@ -19,7 +19,7 @@ services:
     volumes:
       - db_mongo:/data/db
     networks:
-      - live_prometheus
+      - net_prometheus
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongouser
       MONGO_INITDB_ROOT_PASSWORD: mongopwd
