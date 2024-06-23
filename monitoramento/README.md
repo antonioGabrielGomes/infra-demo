@@ -1,0 +1,8 @@
+# monitoramento
+
+* docker
+* prometheus
+* grafana
+
+
+
