@@ -29,7 +29,7 @@ services:
     ports:
       - 9090:9090
     networks:
-      - live_prometheus
+      - net_prometheus
 
 volumes:
   db_mongo:
