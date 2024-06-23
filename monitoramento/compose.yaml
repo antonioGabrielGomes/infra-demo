@@ -31,7 +31,7 @@ services:
     networks:
       - net_prometheus
     volumes:
-      - prometheus.yaml:/etc/prometheus/prometheus.yml
+      - prometheus.yaml:/etc/prometheus/prometheus.yaml
 
 volumes:
   db_mongo:
