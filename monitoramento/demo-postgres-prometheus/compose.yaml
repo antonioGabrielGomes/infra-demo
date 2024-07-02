@@ -1,0 +1,44 @@
+services:
+  postgres:
+    image: postgres:16
+    ports: 
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data   
+    environment:
+      POSTGRES_DB: 'postgres'
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: '123456'
+    networks:
+      - net_prometheus
+
+  postgres-exporter:
+    image: quay.io/prometheuscommunity/postgres-exporter
+    environment:
+      DATA_SOURCE_NAME: "postgresql://postgres:123456@postgres:5432/postgres?sslmode=disable"
+    ports:
+      - 9187:9187
+    networks:
+      - net_prometheus
+
+  prometheus:
+    image: prom/prometheus:v2.47.2
+    ports:
+      - 9090:9090
+    networks:
+      - net_prometheus
+    volumes:
+      - ./prometheus.yaml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana:10.2.2
+    ports: 
+      - 3000:3000
+    networks:
+      - net_prometheus
+
+volumes:
+  postgres:
+networks:
+  net_prometheus:
+    driver: bridge
