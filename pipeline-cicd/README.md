@@ -1,4 +1,4 @@
-#  Pipeline CI/CD: Deploy Seguro e sem medo na prática 
+#  pipeline cicd
 
 * https://www.youtube.com/watch?v=Alw-tPWy900
 
